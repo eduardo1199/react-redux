@@ -14,6 +14,8 @@ const counterSlice = createSlice({
   reducers: {
     //increment
     increment(state) {
+      // its okay to do this because immer makes it immutable
+      // under the hood
       state.value++;
     },
     // decrement
@@ -26,4 +28,7 @@ const counterSlice = createSlice({
     }
   }
 });
+
+export const { increment } = counterSlice.actions;
+export default counterSlice.reducer;
 
