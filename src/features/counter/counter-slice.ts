@@ -25,10 +25,14 @@ const counterSlice = createSlice({
     // reset
     reset(state) {
       state.value = 0;
+    },
+
+    amountAdded(state, action: PayloadAction<number>) {
+      state.value += action.payload;
     }
   }
 });
 
-export const { increment } = counterSlice.actions;
+export const { increment, decrement, amountAdded } = counterSlice.actions;
 export default counterSlice.reducer;
 
